@@ -1,0 +1,30 @@
+
+<h3>Create Customer Form</h3>
+<div [hidden]="submitted" style="width: 300px;">
+	<form (ngSubmit)="onSubmit()">
+		<div class="form-group">
+			<label for="firstname">First Name</label> <input type="text"
+				class="form-control" id="firstname" required
+				[(ngModel)]="customer.firstName" name="firstname">
+		</div>
+
+		<div class="form-group">
+			<label for="lastname">Last Name</label> <input type="text"
+				class="form-control" id="lastname" required
+				[(ngModel)]="customer.lastName" name="lastname">
+		</div>
+
+		<div class="btn-group">
+			<button class="btn btn-primary" (click)="goBack()">Back</button>
+			<button type="submit" class="btn btn-success">Submit</button>
+		</div>
+	</form>
+</div>
+
+<div [hidden]="!submitted">
+	<div class="btn-group ">
+		<h4>You submitted successfully!</h4>
+		<button class="btn btn-primary" (click)="goBack()">Back</button>
+		<button class="btn btn-success" (click)="newCustomer()">Add</button>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+<div *ngIf="customer">
+	<h2>{{customer.firstName}} details:</h2>
+	<div>
+		<label>id: </label> {{customer.id}}
+	</div>
+	<div>
+		<label>First Name: </label> {{customer.firstName}}
+	</div>
+	<div>
+		<label>Last Name: </label> {{customer.lastName}}
+	</div>
+	
+	<button class="btn btn-danger" (click)="delete()">Delete</button>
+</div>

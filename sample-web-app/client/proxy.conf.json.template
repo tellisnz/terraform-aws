@@ -1,0 +1,6 @@
+{
+    "/": {
+        "target": "http://$APP_ELB:$APP_PORT",
+        "secure": false
+    }
+}
