@@ -14,7 +14,7 @@ vpc_one_nat_gateway_per_az = true
 
 db_identifier = "terraformaws"
 db_name = "taws"
-db_user = "tawsdbuser"
+db_username = "tawsdbuser"
 db_password = "tawsdbpassword"
 #db_allocated_storage = 
 #db_port = 

@@ -60,6 +60,8 @@ resource "aws_launch_configuration" "web" {
               export APP_ELB="${module.elb_web.this_elb_dns_name}" APP_PORT="${var.app_port}" WEB_PORT ="${var.web_port}"
               envsubst '${APP_PORT} ${APP_ELB}' < proxy.conf.json.template > proxy.conf.json
               envsubst '${WEB_PORT}' < package.json.template > package.json
+              npm install -g @angular/cli@1.1.0
+              npm install
               nohup npm start &
               EOF
 
