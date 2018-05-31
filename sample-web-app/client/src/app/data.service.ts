@@ -8,7 +8,7 @@ import { Customer } from './customer';
 @Injectable()
 export class DataService {
 
-  private customersUrl = 'customer';  // URL to web API
+  private customersUrl = 'api/customer';  // URL to web API
   private headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(private http: Http) {}
@@ -22,7 +22,7 @@ export class DataService {
   }
 
   getCustomersByLastName(lastName: string): Promise<Customer[]> {
-    const url = `findbylastname/${lastName}`;
+    const url = `api/findbylastname/${lastName}`;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json() as Customer)
@@ -31,7 +31,7 @@ export class DataService {
 
   create(customer: Customer): Promise<Customer> {
     return this.http
-      .post("postcustomer", JSON.stringify(customer), {headers : this.headers})
+      .post("api/postcustomer", JSON.stringify(customer), {headers : this.headers})
       .toPromise()
       .then(res => res.json() as Customer)
       .catch(this.handleError);

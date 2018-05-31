@@ -35,15 +35,15 @@ module "elb_app" {
   listener = [
     {
       instance_port     = "${var.app_port}"
-      instance_protocol = "HTTP"
+      instance_protocol = "TCP"
       lb_port           = "${var.app_port}"
-      lb_protocol       = "HTTP"
+      lb_protocol       = "TCP"
     },
   ]
 
   health_check = [
     {
-      target              = "HTTP:${var.app_port}/"
+      target              = "TCP:${var.app_port}"
       interval            = "${var.app_elb_health_check_interval}"
       healthy_threshold   = "${var.app_elb_healthy_threshold}"
       unhealthy_threshold = "${var.app_elb_unhealthy_threshold}"

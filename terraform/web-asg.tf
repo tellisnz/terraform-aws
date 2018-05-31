@@ -51,18 +51,29 @@ resource "aws_launch_configuration" "web" {
 
   user_data = <<-EOF
               #!/bin/bash
-              yum install -y git gettext
+              # install git/nginx
+              yum install -y git gettext nginx
+              echo "NETWORKING=yes" >/etc/sysconfig/network
+              
+              # install node
               curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
               . /.nvm/nvm.sh
               nvm install 6.11.5
+
+              # setup sample app client
               git clone https://github.com/tellisnz/terraform-aws.git
               cd terraform-aws/sample-web-app/client
-              export APP_ELB="${module.elb_web.this_elb_dns_name}" APP_PORT="${var.app_port}" WEB_PORT="${var.web_port}"
-              envsubst '$${APP_PORT} $${APP_ELB}' < proxy.conf.json.template > proxy.conf.json
-              envsubst '$${WEB_PORT}' < package.json.template > package.json
               npm install -g @angular/cli@1.1.0
               npm install
-              nohup npm start &> npm.out &
+              ng build
+              rm /usr/share/nginx/html/*
+              cp dist/* /usr/share/nginx/html/
+              chown -R nginx:nginx /usr/share/nginx/html
+              
+              # configure and start nginx
+              export APP_ELB="${module.elb_app.this_elb_dns_name}" APP_PORT="${var.app_port}" WEB_PORT="${var.web_port}"
+              envsubst '$${APP_PORT} $${APP_ELB} $${WEB_PORT}' < nginx.conf.template > /etc/nginx/nginx.conf
+              service nginx start
               EOF
 
   lifecycle {
