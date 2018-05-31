@@ -1,0 +1,706 @@
+ data.aws_ami.amazon_linux: Refreshing state...
+ aws_key_pair.web-key: Creating...
+   fingerprint: "" => "<computed>"
+   key_name:    "" => "web-key"
+   public_key:  "" => "###"
+ module.rds.module.db_parameter_group.aws_db_parameter_group.this: Creating...
+   arn:         "" => "<computed>"
+   description: "" => "Database parameter group for scbtest"
+   family:      "" => "postgres9.6"
+   name:        "" => "<computed>"
+   name_prefix: "" => "scbtest-"
+   tags.%:      "" => "2"
+   tags.Group:  "" => "terraform-aws-RSCKj7"
+   tags.Name:   "" => "scbtest"
+ module.vpc.aws_eip.nat[0]: Creating...
+   allocation_id:     "" => "<computed>"
+   association_id:    "" => "<computed>"
+   domain:            "" => "<computed>"
+   instance:          "" => "<computed>"
+   network_interface: "" => "<computed>"
+   private_ip:        "" => "<computed>"
+   public_ip:         "" => "<computed>"
+   tags.%:            "" => "2"
+   tags.Group:        "" => "terraform-aws-RSCKj7"
+   tags.Name:         "" => "terraform-aws-RSCKj7-vpc-ap-southeast-1a"
+   vpc:               "" => "true"
+ module.vpc.aws_vpc.this: Creating...
+   assign_generated_ipv6_cidr_block: "" => "false"
+   cidr_block:                       "" => "192.168.0.0/16"
+   default_network_acl_id:           "" => "<computed>"
+   default_route_table_id:           "" => "<computed>"
+   default_security_group_id:        "" => "<computed>"
+   dhcp_options_id:                  "" => "<computed>"
+   enable_classiclink:               "" => "<computed>"
+   enable_classiclink_dns_support:   "" => "<computed>"
+   enable_dns_hostnames:             "" => "false"
+   enable_dns_support:               "" => "true"
+   instance_tenancy:                 "" => "default"
+   ipv6_association_id:              "" => "<computed>"
+   ipv6_cidr_block:                  "" => "<computed>"
+   main_route_table_id:              "" => "<computed>"
+   tags.%:                           "" => "2"
+   tags.Group:                       "" => "terraform-aws-RSCKj7"
+   tags.Name:                        "" => "terraform-aws-RSCKj7-vpc"
+ module.vpc.aws_eip.nat[1]: Creating...
+   allocation_id:     "" => "<computed>"
+   association_id:    "" => "<computed>"
+   domain:            "" => "<computed>"
+   instance:          "" => "<computed>"
+   network_interface: "" => "<computed>"
+   private_ip:        "" => "<computed>"
+   public_ip:         "" => "<computed>"
+   tags.%:            "" => "2"
+   tags.Group:        "" => "terraform-aws-RSCKj7"
+   tags.Name:         "" => "terraform-aws-RSCKj7-vpc-ap-southeast-1b"
+   vpc:               "" => "true"
+ aws_key_pair.web-key: Creation complete after 0s (ID: web-key)
+ module.vpc.aws_eip.nat[1]: Creation complete after 1s (ID: eipalloc-0449d8ee8de9147bb)
+ module.vpc.aws_eip.nat[0]: Creation complete after 1s (ID: eipalloc-0b61a482500899ceb)
+ module.rds.module.db_parameter_group.aws_db_parameter_group.this: Creation complete after 1s (ID: scbtest-20180531071115319100000001)
+ module.vpc.aws_vpc.this: Creation complete after 2s (ID: vpc-0c84c32a1b518612d)
+ module.vpc.aws_subnet.database[1]: Creating...
+   assign_ipv6_address_on_creation: "" => "false"
+   availability_zone:               "" => "ap-southeast-1b"
+   cidr_block:                      "" => "192.168.202.0/24"
+   ipv6_cidr_block:                 "" => "<computed>"
+   ipv6_cidr_block_association_id:  "" => "<computed>"
+   map_public_ip_on_launch:         "" => "false"
+   tags.%:                          "" => "2"
+   tags.Group:                      "" => "terraform-aws-RSCKj7"
+   tags.Name:                       "" => "terraform-aws-RSCKj7-vpc-db-ap-southeast-1b"
+   vpc_id:                          "" => "vpc-0c84c32a1b518612d"
+ module.vpc.aws_subnet.database[0]: Creating...
+   assign_ipv6_address_on_creation: "" => "false"
+   availability_zone:               "" => "ap-southeast-1a"
+   cidr_block:                      "" => "192.168.102.0/24"
+   ipv6_cidr_block:                 "" => "<computed>"
+   ipv6_cidr_block_association_id:  "" => "<computed>"
+   map_public_ip_on_launch:         "" => "false"
+   tags.%:                          "" => "2"
+   tags.Group:                      "" => "terraform-aws-RSCKj7"
+   tags.Name:                       "" => "terraform-aws-RSCKj7-vpc-db-ap-southeast-1a"
+   vpc_id:                          "" => "vpc-0c84c32a1b518612d"
+ module.vpc.aws_route_table.public: Creating...
+   propagating_vgws.#: "" => "<computed>"
+   route.#:            "" => "<computed>"
+   tags.%:             "" => "2"
+   tags.Group:         "" => "terraform-aws-RSCKj7"
+   tags.Name:          "" => "terraform-aws-RSCKj7-vpc-public"
+   vpc_id:             "" => "vpc-0c84c32a1b518612d"
+ module.vpc.aws_subnet.private[0]: Creating...
+   assign_ipv6_address_on_creation: "" => "false"
+   availability_zone:               "" => "ap-southeast-1a"
+   cidr_block:                      "" => "192.168.1.0/24"
+   ipv6_cidr_block:                 "" => "<computed>"
+   ipv6_cidr_block_association_id:  "" => "<computed>"
+   map_public_ip_on_launch:         "" => "false"
+   tags.%:                          "" => "2"
+   tags.Group:                      "" => "terraform-aws-RSCKj7"
+   tags.Name:                       "" => "terraform-aws-RSCKj7-vpc-private-ap-southeast-1a"
+   vpc_id:                          "" => "vpc-0c84c32a1b518612d"
+ module.vpc.aws_route_table.private[1]: Creating...
+   propagating_vgws.#: "" => "<computed>"
+   route.#:            "" => "<computed>"
+   tags.%:             "" => "2"
+   tags.Group:         "" => "terraform-aws-RSCKj7"
+   tags.Name:          "" => "terraform-aws-RSCKj7-vpc-private-ap-southeast-1b"
+   vpc_id:             "" => "vpc-0c84c32a1b518612d"
+ module.vpc.aws_subnet.private[1]: Creating...
+   assign_ipv6_address_on_creation: "" => "false"
+   availability_zone:               "" => "ap-southeast-1b"
+   cidr_block:                      "" => "192.168.2.0/24"
+   ipv6_cidr_block:                 "" => "<computed>"
+   ipv6_cidr_block_association_id:  "" => "<computed>"
+   map_public_ip_on_launch:         "" => "false"
+   tags.%:                          "" => "2"
+   tags.Group:                      "" => "terraform-aws-RSCKj7"
+   tags.Name:                       "" => "terraform-aws-RSCKj7-vpc-private-ap-southeast-1b"
+   vpc_id:                          "" => "vpc-0c84c32a1b518612d"
+ module.vpc.aws_subnet.public[0]: Creating...
+   assign_ipv6_address_on_creation: "" => "false"
+   availability_zone:               "" => "ap-southeast-1a"
+   cidr_block:                      "" => "192.168.101.0/24"
+   ipv6_cidr_block:                 "" => "<computed>"
+   ipv6_cidr_block_association_id:  "" => "<computed>"
+   map_public_ip_on_launch:         "" => "true"
+   tags.%:                          "" => "2"
+   tags.Group:                      "" => "terraform-aws-RSCKj7"
+   tags.Name:                       "" => "terraform-aws-RSCKj7-vpc-public-ap-southeast-1a"
+   vpc_id:                          "" => "vpc-0c84c32a1b518612d"
+ module.vpc.aws_subnet.public[1]: Creating...
+   assign_ipv6_address_on_creation: "" => "false"
+   availability_zone:               "" => "ap-southeast-1b"
+   cidr_block:                      "" => "192.168.201.0/24"
+   ipv6_cidr_block:                 "" => "<computed>"
+   ipv6_cidr_block_association_id:  "" => "<computed>"
+   map_public_ip_on_launch:         "" => "true"
+   tags.%:                          "" => "2"
+   tags.Group:                      "" => "terraform-aws-RSCKj7"
+   tags.Name:                       "" => "terraform-aws-RSCKj7-vpc-public-ap-southeast-1b"
+   vpc_id:                          "" => "vpc-0c84c32a1b518612d"
+ module.vpc.aws_route_table.private[0]: Creating...
+   propagating_vgws.#: "" => "<computed>"
+   route.#:            "" => "<computed>"
+   tags.%:             "" => "2"
+   tags.Group:         "" => "terraform-aws-RSCKj7"
+   tags.Name:          "" => "terraform-aws-RSCKj7-vpc-private-ap-southeast-1a"
+   vpc_id:             "" => "vpc-0c84c32a1b518612d"
+ aws_security_group.elb_app: Creating...
+   arn:                                  "" => "<computed>"
+   description:                          "" => "Managed by Terraform"
+   egress.#:                             "" => "1"
+   egress.482069346.cidr_blocks.#:       "" => "1"
+   egress.482069346.cidr_blocks.0:       "" => "0.0.0.0/0"
+   egress.482069346.description:         "" => ""
+   egress.482069346.from_port:           "" => "0"
+   egress.482069346.ipv6_cidr_blocks.#:  "" => "0"
+   egress.482069346.prefix_list_ids.#:   "" => "0"
+   egress.482069346.protocol:            "" => "-1"
+   egress.482069346.security_groups.#:   "" => "0"
+   egress.482069346.self:                "" => "false"
+   egress.482069346.to_port:             "" => "0"
+   ingress.#:                            "" => "1"
+   ingress.516175195.cidr_blocks.#:      "" => "1"
+   ingress.516175195.cidr_blocks.0:      "" => "0.0.0.0/0"
+   ingress.516175195.description:        "" => ""
+   ingress.516175195.from_port:          "" => "8080"
+   ingress.516175195.ipv6_cidr_blocks.#: "" => "0"
+   ingress.516175195.protocol:           "" => "tcp"
+   ingress.516175195.security_groups.#:  "" => "0"
+   ingress.516175195.self:               "" => "false"
+   ingress.516175195.to_port:            "" => "8080"
+   name:                                 "" => "terraform-aws-RSCKj7-elb-app-sg"
+   owner_id:                             "" => "<computed>"
+   revoke_rules_on_delete:               "" => "false"
+   tags.%:                               "" => "1"
+   tags.Group:                           "" => "terraform-aws-RSCKj7"
+   vpc_id:                               "" => "vpc-0c84c32a1b518612d"
+ module.vpc.aws_route_table.public: Creation complete after 1s (ID: rtb-017f98bc74e2aaad3)
+ aws_security_group.web: Creating...
+   arn:                                   "" => "<computed>"
+   description:                           "" => "Managed by Terraform"
+   egress.#:                              "" => "1"
+   egress.1403647648.cidr_blocks.#:       "" => "1"
+   egress.1403647648.cidr_blocks.0:       "" => "0.0.0.0/0"
+   egress.1403647648.description:         "" => ""
+   egress.1403647648.from_port:           "" => "0"
+   egress.1403647648.ipv6_cidr_blocks.#:  "" => "0"
+   egress.1403647648.prefix_list_ids.#:   "" => "0"
+   egress.1403647648.protocol:            "" => "tcp"
+   egress.1403647648.security_groups.#:   "" => "0"
+   egress.1403647648.self:                "" => "false"
+   egress.1403647648.to_port:             "" => "65535"
+   ingress.#:                             "" => "2"
+   ingress.2214680975.cidr_blocks.#:      "" => "1"
+   ingress.2214680975.cidr_blocks.0:      "" => "0.0.0.0/0"
+   ingress.2214680975.description:        "" => ""
+   ingress.2214680975.from_port:          "" => "80"
+   ingress.2214680975.ipv6_cidr_blocks.#: "" => "0"
+   ingress.2214680975.protocol:           "" => "tcp"
+   ingress.2214680975.security_groups.#:  "" => "0"
+   ingress.2214680975.self:               "" => "false"
+   ingress.2214680975.to_port:            "" => "80"
+   ingress.2541437006.cidr_blocks.#:      "" => "1"
+   ingress.2541437006.cidr_blocks.0:      "" => "0.0.0.0/0"
+   ingress.2541437006.description:        "" => ""
+   ingress.2541437006.from_port:          "" => "22"
+   ingress.2541437006.ipv6_cidr_blocks.#: "" => "0"
+   ingress.2541437006.protocol:           "" => "tcp"
+   ingress.2541437006.security_groups.#:  "" => "0"
+   ingress.2541437006.self:               "" => "false"
+   ingress.2541437006.to_port:            "" => "22"
+   name:                                  "" => "terraform-aws-RSCKj7-web-sg"
+   owner_id:                              "" => "<computed>"
+   revoke_rules_on_delete:                "" => "false"
+   tags.%:                                "" => "1"
+   tags.Group:                            "" => "terraform-aws-RSCKj7"
+   vpc_id:                                "" => "vpc-0c84c32a1b518612d"
+ module.vpc.aws_route_table.private[1]: Creation complete after 1s (ID: rtb-0f33e68fa7f3b2360)
+ module.vpc.aws_internet_gateway.this: Creating...
+   tags.%:     "0" => "2"
+   tags.Group: "" => "terraform-aws-RSCKj7"
+   tags.Name:  "" => "terraform-aws-RSCKj7-vpc"
+   vpc_id:     "" => "vpc-0c84c32a1b518612d"
+ module.vpc.aws_route_table.private[0]: Creation complete after 1s (ID: rtb-005989cd307995be0)
+ aws_security_group.elb_web: Creating...
+   arn:                                   "" => "<computed>"
+   description:                           "" => "Managed by Terraform"
+   egress.#:                              "" => "1"
+   egress.482069346.cidr_blocks.#:        "" => "1"
+   egress.482069346.cidr_blocks.0:        "" => "0.0.0.0/0"
+   egress.482069346.description:          "" => ""
+   egress.482069346.from_port:            "" => "0"
+   egress.482069346.ipv6_cidr_blocks.#:   "" => "0"
+   egress.482069346.prefix_list_ids.#:    "" => "0"
+   egress.482069346.protocol:             "" => "-1"
+   egress.482069346.security_groups.#:    "" => "0"
+   egress.482069346.self:                 "" => "false"
+   egress.482069346.to_port:              "" => "0"
+   ingress.#:                             "" => "1"
+   ingress.2214680975.cidr_blocks.#:      "" => "1"
+   ingress.2214680975.cidr_blocks.0:      "" => "0.0.0.0/0"
+   ingress.2214680975.description:        "" => ""
+   ingress.2214680975.from_port:          "" => "80"
+   ingress.2214680975.ipv6_cidr_blocks.#: "" => "0"
+   ingress.2214680975.protocol:           "" => "tcp"
+   ingress.2214680975.security_groups.#:  "" => "0"
+   ingress.2214680975.self:               "" => "false"
+   ingress.2214680975.to_port:            "" => "80"
+   name:                                  "" => "terraform-aws-RSCKj7-elb-web-sg"
+   owner_id:                              "" => "<computed>"
+   revoke_rules_on_delete:                "" => "false"
+   tags.%:                                "" => "1"
+   tags.Group:                            "" => "terraform-aws-RSCKj7"
+   vpc_id:                                "" => "vpc-0c84c32a1b518612d"
+ module.vpc.aws_subnet.private[0]: Creation complete after 1s (ID: subnet-048ef129d43f33c1b)
+ module.vpc.aws_subnet.public[0]: Creation complete after 1s (ID: subnet-055246c939575726a)
+ module.vpc.aws_subnet.private[1]: Creation complete after 1s (ID: subnet-0c2b7cc5c94f2168b)
+ module.vpc.aws_route_table_association.private[0]: Creating...
+   route_table_id: "" => "rtb-005989cd307995be0"
+   subnet_id:      "" => "subnet-048ef129d43f33c1b"
+ module.vpc.aws_route_table_association.private[1]: Creating...
+   route_table_id: "" => "rtb-0f33e68fa7f3b2360"
+   subnet_id:      "" => "subnet-0c2b7cc5c94f2168b"
+ aws_security_group.rds: Creating...
+   arn:                                   "" => "<computed>"
+   description:                           "" => "Managed by Terraform"
+   egress.#:                              "" => "<computed>"
+   ingress.#:                             "" => "1"
+   ingress.2072778846.cidr_blocks.#:      "" => "2"
+   ingress.2072778846.cidr_blocks.0:      "" => "192.168.1.0/24"
+   ingress.2072778846.cidr_blocks.1:      "" => "192.168.2.0/24"
+   ingress.2072778846.description:        "" => ""
+   ingress.2072778846.from_port:          "" => "5432"
+   ingress.2072778846.ipv6_cidr_blocks.#: "" => "0"
+   ingress.2072778846.protocol:           "" => "tcp"
+   ingress.2072778846.security_groups.#:  "" => "0"
+   ingress.2072778846.self:               "" => "false"
+   ingress.2072778846.to_port:            "" => "5432"
+   name:                                  "" => "terraform-aws-RSCKj7-rds-sg"
+   owner_id:                              "" => "<computed>"
+   revoke_rules_on_delete:                "" => "false"
+   tags.%:                                "" => "1"
+   tags.Group:                            "" => "terraform-aws-RSCKj7"
+   vpc_id:                                "" => "vpc-0c84c32a1b518612d"
+ module.vpc.aws_subnet.database[1]: Creation complete after 1s (ID: subnet-020eb0a7465af0ede)
+ module.vpc.aws_subnet.database[0]: Creation complete after 1s (ID: subnet-09ad91a39782a1d7d)
+ module.vpc.aws_db_subnet_group.database: Creating...
+   arn:                   "" => "<computed>"
+   description:           "" => "Database subnet group for terraform-aws-RSCKj7-vpc"
+   name:                  "" => "terraform-aws-rsckj7-vpc"
+   name_prefix:           "" => "<computed>"
+   subnet_ids.#:          "" => "2"
+   subnet_ids.1368322222: "" => "subnet-020eb0a7465af0ede"
+   subnet_ids.3872551531: "" => "subnet-09ad91a39782a1d7d"
+   tags.%:                "" => "2"
+   tags.Group:            "" => "terraform-aws-RSCKj7"
+   tags.Name:             "" => "terraform-aws-RSCKj7-vpc"
+ module.vpc.aws_route_table_association.database[1]: Creating...
+   route_table_id: "" => "rtb-0f33e68fa7f3b2360"
+   subnet_id:      "" => "subnet-020eb0a7465af0ede"
+ module.vpc.aws_subnet.public[1]: Creation complete after 1s (ID: subnet-04761af7eaca19e94)
+ module.vpc.aws_route_table_association.database[0]: Creating...
+   route_table_id: "" => "rtb-005989cd307995be0"
+   subnet_id:      "" => "subnet-09ad91a39782a1d7d"
+ module.vpc.aws_route_table_association.database[1]: Creation complete after 5s (ID: rtbassoc-0b16c0b58755a1dd8)
+ module.vpc.aws_route_table_association.public[1]: Creating...
+   route_table_id: "" => "rtb-017f98bc74e2aaad3"
+   subnet_id:      "" => "subnet-04761af7eaca19e94"
+ module.vpc.aws_route_table_association.database[0]: Creation complete after 5s (ID: rtbassoc-000143511f8cfe991)
+ module.vpc.aws_route_table_association.public[0]: Creating...
+   route_table_id: "" => "rtb-017f98bc74e2aaad3"
+   subnet_id:      "" => "subnet-055246c939575726a"
+ module.vpc.aws_route_table_association.private[1]: Creation complete after 5s (ID: rtbassoc-0b2133be2e53d9565)
+ aws_security_group.app: Creating...
+   arn:                                   "" => "<computed>"
+   description:                           "" => "Managed by Terraform"
+   egress.#:                              "" => "1"
+   egress.1403647648.cidr_blocks.#:       "" => "1"
+   egress.1403647648.cidr_blocks.0:       "" => "0.0.0.0/0"
+   egress.1403647648.description:         "" => ""
+   egress.1403647648.from_port:           "" => "0"
+   egress.1403647648.ipv6_cidr_blocks.#:  "" => "0"
+   egress.1403647648.prefix_list_ids.#:   "" => "0"
+   egress.1403647648.protocol:            "" => "tcp"
+   egress.1403647648.security_groups.#:   "" => "0"
+   egress.1403647648.self:                "" => "false"
+   egress.1403647648.to_port:             "" => "65535"
+   ingress.#:                             "" => "2"
+   ingress.2273780398.cidr_blocks.#:      "" => "4"
+   ingress.2273780398.cidr_blocks.0:      "" => "192.168.101.0/24"
+   ingress.2273780398.cidr_blocks.1:      "" => "192.168.201.0/24"
+   ingress.2273780398.cidr_blocks.2:      "" => "192.168.1.0/24"
+   ingress.2273780398.cidr_blocks.3:      "" => "192.168.2.0/24"
+   ingress.2273780398.description:        "" => ""
+   ingress.2273780398.from_port:          "" => "8080"
+   ingress.2273780398.ipv6_cidr_blocks.#: "" => "0"
+   ingress.2273780398.protocol:           "" => "tcp"
+   ingress.2273780398.security_groups.#:  "" => "0"
+   ingress.2273780398.self:               "" => "false"
+   ingress.2273780398.to_port:            "" => "8080"
+   ingress.361419383.cidr_blocks.#:       "" => "2"
+   ingress.361419383.cidr_blocks.0:       "" => "192.168.101.0/24"
+   ingress.361419383.cidr_blocks.1:       "" => "192.168.201.0/24"
+   ingress.361419383.description:         "" => ""
+   ingress.361419383.from_port:           "" => "22"
+   ingress.361419383.ipv6_cidr_blocks.#:  "" => "0"
+   ingress.361419383.protocol:            "" => "tcp"
+   ingress.361419383.security_groups.#:   "" => "0"
+   ingress.361419383.self:                "" => "false"
+   ingress.361419383.to_port:             "" => "22"
+   name:                                  "" => "terraform-aws-RSCKj7-app-sg"
+   owner_id:                              "" => "<computed>"
+   revoke_rules_on_delete:                "" => "false"
+   tags.%:                                "" => "1"
+   tags.Group:                            "" => "terraform-aws-RSCKj7"
+   vpc_id:                                "" => "vpc-0c84c32a1b518612d"
+ module.vpc.aws_route_table_association.private[0]: Creation complete after 5s (ID: rtbassoc-09d9eb7dc97d9956e)
+ module.rds.module.db_subnet_group.aws_db_subnet_group.this: Creating...
+   arn:                   "" => "<computed>"
+   description:           "" => "Database subnet group for scbtest"
+   name:                  "" => "<computed>"
+   name_prefix:           "" => "scbtest-"
+   subnet_ids.#:          "" => "2"
+   subnet_ids.1368322222: "" => "subnet-020eb0a7465af0ede"
+   subnet_ids.3872551531: "" => "subnet-09ad91a39782a1d7d"
+   tags.%:                "" => "2"
+   tags.Group:            "" => "terraform-aws-RSCKj7"
+   tags.Name:             "" => "scbtest"
+ module.vpc.aws_internet_gateway.this: Creation complete after 5s (ID: igw-0ecff7bb0ab679e03)
+ module.vpc.aws_nat_gateway.this[0]: Creating...
+   allocation_id:        "" => "eipalloc-0b61a482500899ceb"
+   network_interface_id: "" => "<computed>"
+   private_ip:           "" => "<computed>"
+   public_ip:            "" => "<computed>"
+   subnet_id:            "" => "subnet-055246c939575726a"
+   tags.%:               "" => "2"
+   tags.Group:           "" => "terraform-aws-RSCKj7"
+   tags.Name:            "" => "terraform-aws-RSCKj7-vpc-ap-southeast-1a"
+ module.vpc.aws_route_table_association.public[1]: Creation complete after 0s (ID: rtbassoc-090c287ea90c6a73f)
+ module.vpc.aws_route.public_internet_gateway: Creating...
+   destination_cidr_block:     "" => "0.0.0.0/0"
+   destination_prefix_list_id: "" => "<computed>"
+   egress_only_gateway_id:     "" => "<computed>"
+   gateway_id:                 "" => "igw-0ecff7bb0ab679e03"
+   instance_id:                "" => "<computed>"
+   instance_owner_id:          "" => "<computed>"
+   nat_gateway_id:             "" => "<computed>"
+   network_interface_id:       "" => "<computed>"
+   origin:                     "" => "<computed>"
+   route_table_id:             "" => "rtb-017f98bc74e2aaad3"
+   state:                      "" => "<computed>"
+ module.vpc.aws_route_table_association.public[0]: Creation complete after 0s (ID: rtbassoc-0202331d7795a8bb2)
+ module.vpc.aws_nat_gateway.this[1]: Creating...
+   allocation_id:        "" => "eipalloc-0449d8ee8de9147bb"
+   network_interface_id: "" => "<computed>"
+   private_ip:           "" => "<computed>"
+   public_ip:            "" => "<computed>"
+   subnet_id:            "" => "subnet-04761af7eaca19e94"
+   tags.%:               "" => "2"
+   tags.Group:           "" => "terraform-aws-RSCKj7"
+   tags.Name:            "" => "terraform-aws-RSCKj7-vpc-ap-southeast-1b"
+ module.vpc.aws_route.public_internet_gateway: Creation complete after 1s (ID: r-rtb-017f98bc74e2aaad31080289494)
+ aws_security_group.elb_app: Creation complete after 7s (ID: sg-08914b775bf8f5c61)
+ module.elb_app.module.elb.aws_elb.this: Creating...
+   arn:                                    "" => "<computed>"
+   availability_zones.#:                   "" => "<computed>"
+   connection_draining:                    "" => "false"
+   connection_draining_timeout:            "" => "300"
+   cross_zone_load_balancing:              "" => "true"
+   dns_name:                               "" => "<computed>"
+   health_check.#:                         "" => "1"
+   health_check.0.healthy_threshold:       "" => "2"
+   health_check.0.interval:                "" => "20"
+   health_check.0.target:                  "" => "TCP:8080"
+   health_check.0.timeout:                 "" => "5"
+   health_check.0.unhealthy_threshold:     "" => "2"
+   idle_timeout:                           "" => "60"
+   instances.#:                            "" => "<computed>"
+   internal:                               "" => "true"
+   listener.#:                             "" => "1"
+   listener.3802845210.instance_port:      "" => "8080"
+   listener.3802845210.instance_protocol:  "" => "TCP"
+   listener.3802845210.lb_port:            "" => "8080"
+   listener.3802845210.lb_protocol:        "" => "TCP"
+   listener.3802845210.ssl_certificate_id: "" => ""
+   name:                                   "" => "terraform-aws-RSCKj7-elb-app"
+   security_groups.#:                      "" => "1"
+   security_groups.3929049976:             "" => "sg-08914b775bf8f5c61"
+   source_security_group:                  "" => "<computed>"
+   source_security_group_id:               "" => "<computed>"
+   subnets.#:                              "" => "2"
+   subnets.2564691070:                     "" => "subnet-048ef129d43f33c1b"
+   subnets.519293707:                      "" => "subnet-0c2b7cc5c94f2168b"
+   tags.%:                                 "" => "2"
+   tags.Group:                             "" => "terraform-aws-RSCKj7"
+   tags.Name:                              "" => "terraform-aws-RSCKj7-elb-app"
+   zone_id:                                "" => "<computed>"
+ module.vpc.aws_db_subnet_group.database: Creation complete after 6s (ID: terraform-aws-rsckj7-vpc)
+ module.rds.module.db_subnet_group.aws_db_subnet_group.this: Creation complete after 1s (ID: scbtest-20180531071123207100000002)
+ aws_security_group.web: Creation complete after 6s (ID: sg-01599d1a60a6a0b50)
+ aws_security_group.rds: Creation complete after 6s (ID: sg-0bf53e170045839da)
+ module.rds.module.db_instance.aws_db_instance.this: Creating...
+   address:                             "" => "<computed>"
+   allocated_storage:                   "" => "5"
+   allow_major_version_upgrade:         "" => "false"
+   apply_immediately:                   "" => "false"
+   arn:                                 "" => "<computed>"
+   auto_minor_version_upgrade:          "" => "true"
+   availability_zone:                   "" => "<computed>"
+   backup_retention_period:             "" => "0"
+   backup_window:                       "" => "03:00-06:00"
+   ca_cert_identifier:                  "" => "<computed>"
+   character_set_name:                  "" => "<computed>"
+   copy_tags_to_snapshot:               "" => "false"
+   db_subnet_group_name:                "" => "scbtest-20180531071123207100000002"
+   endpoint:                            "" => "<computed>"
+   engine:                              "" => "postgres"
+   engine_version:                      "" => "9.6.3"
+   final_snapshot_identifier:           "" => "0"
+   hosted_zone_id:                      "" => "<computed>"
+   iam_database_authentication_enabled: "" => "false"
+   identifier:                          "" => "scbtest"
+   identifier_prefix:                   "" => "<computed>"
+   instance_class:                      "" => "db.t2.micro"
+   iops:                                "" => "0"
+   kms_key_id:                          "" => "<computed>"
+   license_model:                       "" => "<computed>"
+   maintenance_window:                  "" => "mon:00:00-mon:03:00"
+   monitoring_interval:                 "" => "0"
+   monitoring_role_arn:                 "" => "<computed>"
+   multi_az:                            "" => "false"
+   name:                                "" => "scbtest"
+   option_group_name:                   "" => "<computed>"
+   parameter_group_name:                "" => "scbtest-20180531071115319100000001"
+   password:                            "<sensitive>" => "<sensitive>"
+   port:                                "" => "5432"
+   publicly_accessible:                 "" => "false"
+   replicas.#:                          "" => "<computed>"
+   resource_id:                         "" => "<computed>"
+   skip_final_snapshot:                 "" => "true"
+   status:                              "" => "<computed>"
+   storage_encrypted:                   "" => "false"
+   storage_type:                        "" => "gp2"
+   tags.%:                              "" => "2"
+   tags.Group:                          "" => "terraform-aws-RSCKj7"
+   tags.Name:                           "" => "scbtest"
+   timezone:                            "" => "<computed>"
+   username:                            "" => "scbtestdbuser"
+   vpc_security_group_ids.#:            "" => "1"
+   vpc_security_group_ids.2180826518:   "" => "sg-0bf53e170045839da"
+ aws_security_group.elb_web: Creation complete after 6s (ID: sg-0c1375408909673e8)
+ module.elb_web.module.elb.aws_elb.this: Creating...
+   arn:                                    "" => "<computed>"
+   availability_zones.#:                   "" => "<computed>"
+   connection_draining:                    "" => "false"
+   connection_draining_timeout:            "" => "300"
+   cross_zone_load_balancing:              "" => "true"
+   dns_name:                               "" => "<computed>"
+   health_check.#:                         "" => "1"
+   health_check.0.healthy_threshold:       "" => "2"
+   health_check.0.interval:                "" => "20"
+   health_check.0.target:                  "" => "HTTP:80/"
+   health_check.0.timeout:                 "" => "5"
+   health_check.0.unhealthy_threshold:     "" => "2"
+   idle_timeout:                           "" => "60"
+   instances.#:                            "" => "<computed>"
+   internal:                               "" => "false"
+   listener.#:                             "" => "1"
+   listener.3057123346.instance_port:      "" => "80"
+   listener.3057123346.instance_protocol:  "" => "HTTP"
+   listener.3057123346.lb_port:            "" => "80"
+   listener.3057123346.lb_protocol:        "" => "HTTP"
+   listener.3057123346.ssl_certificate_id: "" => ""
+   name:                                   "" => "terraform-aws-RSCKj7-elb-web"
+   security_groups.#:                      "" => "1"
+   security_groups.3170130578:             "" => "sg-0c1375408909673e8"
+   source_security_group:                  "" => "<computed>"
+   source_security_group_id:               "" => "<computed>"
+   subnets.#:                              "" => "2"
+   subnets.1717325060:                     "" => "subnet-04761af7eaca19e94"
+   subnets.3189819876:                     "" => "subnet-055246c939575726a"
+   tags.%:                                 "" => "2"
+   tags.Group:                             "" => "terraform-aws-RSCKj7"
+   tags.Name:                              "" => "terraform-aws-RSCKj7-elb-web"
+   zone_id:                                "" => "<computed>"
+ aws_security_group.app: Creation complete after 7s (ID: sg-02a51d3911bf62f49)
+ module.elb_app.module.elb.aws_elb.this: Creation complete after 7s (ID: terraform-aws-RSCKj7-elb-app)
+ aws_launch_configuration.web: Creating...
+   associate_public_ip_address: "" => "false"
+   ebs_block_device.#:          "" => "<computed>"
+   ebs_optimized:               "" => "<computed>"
+   enable_monitoring:           "" => "true"
+   image_id:                    "" => "ami-de90a5a2"
+   instance_type:               "" => "t2.small"
+   key_name:                    "" => "web-key"
+   name:                        "" => "<computed>"
+   name_prefix:                 "" => "terraform-aws-RSCKj7-web-vm-"
+   root_block_device.#:         "" => "<computed>"
+   security_groups.#:           "" => "1"
+   security_groups.3162274150:  "" => "sg-01599d1a60a6a0b50"
+   user_data:                   "" => "339f6e55ed5c9b8b0bad70994da09206396e9442"
+ module.elb_web.module.elb.aws_elb.this: Creation complete after 7s (ID: terraform-aws-RSCKj7-elb-web)
+ aws_launch_configuration.web: Creation complete after 1s (ID: terraform-aws-RSCKj7-web-vm-20180531071131179500000003)
+ aws_autoscaling_group.web: Creating...
+   arn:                            "" => "<computed>"
+   default_cooldown:               "" => "<computed>"
+   desired_capacity:               "" => "<computed>"
+   force_delete:                   "" => "false"
+   health_check_grace_period:      "" => "300"
+   health_check_type:              "" => "EC2"
+   launch_configuration:           "" => "terraform-aws-RSCKj7-web-vm-20180531071131179500000003"
+   load_balancers.#:               "" => "1"
+   load_balancers.2495583431:      "" => "terraform-aws-RSCKj7-elb-web"
+   max_size:                       "" => "3"
+   metrics_granularity:            "" => "1Minute"
+   min_size:                       "" => "2"
+   name:                           "" => "<computed>"
+   protect_from_scale_in:          "" => "false"
+   service_linked_role_arn:        "" => "<computed>"
+   tags.#:                         "" => "1"
+   tags.0.%:                       "" => "3"
+   tags.0.key:                     "" => "Group"
+   tags.0.propagate_at_launch:     "" => "1"
+   tags.0.value:                   "" => "terraform-aws-RSCKj7"
+   target_group_arns.#:            "" => "<computed>"
+   vpc_zone_identifier.#:          "" => "2"
+   vpc_zone_identifier.1717325060: "" => "subnet-04761af7eaca19e94"
+   vpc_zone_identifier.3189819876: "" => "subnet-055246c939575726a"
+   wait_for_capacity_timeout:      "" => "10m"
+ module.vpc.aws_nat_gateway.this.0: Still creating... (10s elapsed)
+ module.vpc.aws_nat_gateway.this.1: Still creating... (10s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (10s elapsed)
+ aws_autoscaling_group.web: Still creating... (10s elapsed)
+ module.vpc.aws_nat_gateway.this.0: Still creating... (20s elapsed)
+ module.vpc.aws_nat_gateway.this.1: Still creating... (20s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (20s elapsed)
+ aws_autoscaling_group.web: Still creating... (20s elapsed)
+ module.vpc.aws_nat_gateway.this.0: Still creating... (30s elapsed)
+ module.vpc.aws_nat_gateway.this.1: Still creating... (30s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (30s elapsed)
+ aws_autoscaling_group.web: Still creating... (30s elapsed)
+ module.vpc.aws_nat_gateway.this.0: Still creating... (40s elapsed)
+ module.vpc.aws_nat_gateway.this.1: Still creating... (40s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (40s elapsed)
+ aws_autoscaling_group.web: Still creating... (40s elapsed)
+ module.vpc.aws_nat_gateway.this.0: Still creating... (50s elapsed)
+ module.vpc.aws_nat_gateway.this.1: Still creating... (50s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (50s elapsed)
+ aws_autoscaling_group.web: Creation complete after 49s (ID: tf-asg-20180531071131707500000004)
+ module.vpc.aws_nat_gateway.this.0: Still creating... (1m0s elapsed)
+ module.vpc.aws_nat_gateway.this.1: Still creating... (1m0s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (1m0s elapsed)
+ module.vpc.aws_nat_gateway.this.0: Still creating... (1m10s elapsed)
+ module.vpc.aws_nat_gateway.this.1: Still creating... (1m10s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (1m10s elapsed)
+ module.vpc.aws_nat_gateway.this.0: Still creating... (1m20s elapsed)
+ module.vpc.aws_nat_gateway.this.1: Still creating... (1m20s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (1m20s elapsed)
+ module.vpc.aws_nat_gateway.this.0: Still creating... (1m30s elapsed)
+ module.vpc.aws_nat_gateway.this.1: Still creating... (1m30s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (1m30s elapsed)
+ module.vpc.aws_nat_gateway.this.0: Still creating... (1m40s elapsed)
+ module.vpc.aws_nat_gateway.this.1: Still creating... (1m40s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (1m40s elapsed)
+ module.vpc.aws_nat_gateway.this.0: Still creating... (1m50s elapsed)
+ module.vpc.aws_nat_gateway.this.1: Still creating... (1m50s elapsed)
+ module.vpc.aws_nat_gateway.this[0]: Creation complete after 1m51s (ID: nat-05cbd5a13ab867eab)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (1m50s elapsed)
+ module.vpc.aws_nat_gateway.this.1: Still creating... (2m0s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (2m0s elapsed)
+ module.vpc.aws_nat_gateway.this[1]: Creation complete after 2m1s (ID: nat-095e3b836663fc9ab)
+ module.vpc.aws_route.private_nat_gateway[0]: Creating...
+   destination_cidr_block:     "" => "0.0.0.0/0"
+   destination_prefix_list_id: "" => "<computed>"
+   egress_only_gateway_id:     "" => "<computed>"
+   gateway_id:                 "" => "<computed>"
+   instance_id:                "" => "<computed>"
+   instance_owner_id:          "" => "<computed>"
+   nat_gateway_id:             "" => "nat-05cbd5a13ab867eab"
+   network_interface_id:       "" => "<computed>"
+   origin:                     "" => "<computed>"
+   route_table_id:             "" => "rtb-005989cd307995be0"
+   state:                      "" => "<computed>"
+ module.vpc.aws_route.private_nat_gateway[1]: Creating...
+   destination_cidr_block:     "" => "0.0.0.0/0"
+   destination_prefix_list_id: "" => "<computed>"
+   egress_only_gateway_id:     "" => "<computed>"
+   gateway_id:                 "" => "<computed>"
+   instance_id:                "" => "<computed>"
+   instance_owner_id:          "" => "<computed>"
+   nat_gateway_id:             "" => "nat-095e3b836663fc9ab"
+   network_interface_id:       "" => "<computed>"
+   origin:                     "" => "<computed>"
+   route_table_id:             "" => "rtb-0f33e68fa7f3b2360"
+   state:                      "" => "<computed>"
+ module.vpc.aws_route.private_nat_gateway[1]: Creation complete after 1s (ID: r-rtb-0f33e68fa7f3b23601080289494)
+ module.vpc.aws_route.private_nat_gateway[0]: Creation complete after 1s (ID: r-rtb-005989cd307995be01080289494)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (2m10s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (2m20s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (2m30s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (2m40s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (2m50s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (3m0s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (3m10s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (3m20s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (3m30s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (3m40s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (3m50s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (4m0s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (4m10s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (4m20s elapsed)
+ module.rds.db_instance.aws_db_instance.this: Still creating... (4m30s elapsed)
+ module.rds.module.db_instance.aws_db_instance.this: Creation complete after 4m31s (ID: scbtest)
+ aws_launch_configuration.app: Creating...
+   associate_public_ip_address: "" => "false"
+   ebs_block_device.#:          "" => "<computed>"
+   ebs_optimized:               "" => "<computed>"
+   enable_monitoring:           "" => "true"
+   image_id:                    "" => "ami-de90a5a2"
+   instance_type:               "" => "t2.small"
+   key_name:                    "" => "web-key"
+   name:                        "" => "<computed>"
+   name_prefix:                 "" => "terraform-aws-RSCKj7-app-vm-"
+   root_block_device.#:         "" => "<computed>"
+   security_groups.#:           "" => "1"
+   security_groups.3243373740:  "" => "sg-02a51d3911bf62f49"
+   user_data:                   "" => "40d59ea6bf82989890af7d2725b0662441ded58f"
+ aws_launch_configuration.app: Creation complete after 0s (ID: terraform-aws-RSCKj7-app-vm-20180531071554764200000005)
+ aws_autoscaling_group.app: Creating...
+   arn:                            "" => "<computed>"
+   default_cooldown:               "" => "<computed>"
+   desired_capacity:               "" => "<computed>"
+   force_delete:                   "" => "false"
+   health_check_grace_period:      "" => "300"
+   health_check_type:              "" => "EC2"
+   launch_configuration:           "" => "terraform-aws-RSCKj7-app-vm-20180531071554764200000005"
+   load_balancers.#:               "" => "1"
+   load_balancers.1209588825:      "" => "terraform-aws-RSCKj7-elb-app"
+   max_size:                       "" => "3"
+   metrics_granularity:            "" => "1Minute"
+   min_size:                       "" => "2"
+   name:                           "" => "<computed>"
+   protect_from_scale_in:          "" => "false"
+   service_linked_role_arn:        "" => "<computed>"
+   tags.#:                         "" => "1"
+   tags.0.%:                       "" => "3"
+   tags.0.key:                     "" => "Group"
+   tags.0.propagate_at_launch:     "" => "1"
+   tags.0.value:                   "" => "terraform-aws-RSCKj7"
+   target_group_arns.#:            "" => "<computed>"
+   vpc_zone_identifier.#:          "" => "2"
+   vpc_zone_identifier.2564691070: "" => "subnet-048ef129d43f33c1b"
+   vpc_zone_identifier.519293707:  "" => "subnet-0c2b7cc5c94f2168b"
+   wait_for_capacity_timeout:      "" => "10m"
+ aws_autoscaling_group.app: Still creating... (10s elapsed)
+ aws_autoscaling_group.app: Still creating... (20s elapsed)
+ aws_autoscaling_group.app: Still creating... (30s elapsed)
+ aws_autoscaling_group.app: Creation complete after 39s (ID: tf-asg-20180531071555354300000006)
+ 
+ Apply complete! Resources: 40 added, 0 changed, 0 destroyed.
+ 
+ Outputs:
+ 
+ elb_dns_name = terraform-aws-RSCKj7-elb-web-387632531.ap-southeast-1.elb.amazonaws.com
+
