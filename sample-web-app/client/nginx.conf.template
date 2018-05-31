@@ -42,7 +42,7 @@ http {
         }
 
         location /api/ {
-            proxy_pass   http://$APP_ELB:$APP_PORT;
+            proxy_pass   http://$APP_ELB:$APP_PORT/;
         }
 
     }

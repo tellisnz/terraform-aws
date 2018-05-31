@@ -65,6 +65,7 @@ resource "aws_launch_configuration" "web" {
               cd terraform-aws/sample-web-app/client
               npm install -g @angular/cli@1.1.0
               npm install
+              export HOME=/root
               ng build
               rm /usr/share/nginx/html/*
               cp dist/* /usr/share/nginx/html/
