@@ -53,16 +53,16 @@ resource "aws_launch_configuration" "web" {
               #!/bin/bash
               yum install -y git gettext
               curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
-              . ~/.nvm/nvm.sh
+              . /.nvm/nvm.sh
               nvm install 6.11.5
               git clone https://github.com/tellisnz/terraform-aws.git
               cd terraform-aws/sample-web-app/client
-              export APP_ELB="${module.elb_web.this_elb_dns_name}" APP_PORT="${var.app_port}" WEB_PORT ="${var.web_port}"
-              envsubst '${APP_PORT} ${APP_ELB}' < proxy.conf.json.template > proxy.conf.json
-              envsubst '${WEB_PORT}' < package.json.template > package.json
+              export APP_ELB="${module.elb_web.this_elb_dns_name}" APP_PORT="${var.app_port}" WEB_PORT="${var.web_port}"
+              envsubst '$${APP_PORT} $${APP_ELB}' < proxy.conf.json.template > proxy.conf.json
+              envsubst '$${WEB_PORT}' < package.json.template > package.json
               npm install -g @angular/cli@1.1.0
               npm install
-              nohup npm start &
+              nohup npm start &> npm.out &
               EOF
 
   lifecycle {
@@ -77,7 +77,7 @@ resource "aws_autoscaling_group" "web" {
   vpc_zone_identifier = ["${module.vpc.public_subnets}"]
 
   load_balancers    = ["${module.elb_web.this_elb_name}"]
-  health_check_type = "ELB"
+  health_check_type = "EC2"
 
   min_size = "${var.web_autoscale_min_size}"
   max_size = "${var.web_autoscale_max_size}"

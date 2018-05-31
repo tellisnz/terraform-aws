@@ -49,8 +49,8 @@ resource "aws_launch_configuration" "app" {
               sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
               yum install -y apache-maven
               git clone https://github.com/tellisnz/terraform-aws.git
-              cd terraform-aws/sample-web-app server
-              mvn spring-boot:run -Dspring.datasource.url=jdbc:postgresql://"${module.rds.this_db_instance_address}:${var.db_port}/" -Dspring.datasource.username="${var.db_username}" -Dspring.datasource.password="${var.db_password}" -Dserver.port="${var.app_port}"
+              cd terraform-aws/sample-web-app/server
+              nohup mvn spring-boot:run -Dspring.datasource.url=jdbc:postgresql://"${module.rds.this_db_instance_address}:${var.db_port}/" -Dspring.datasource.username="${var.db_username}" -Dspring.datasource.password="${var.db_password}" -Dserver.port="${var.app_port}" &> mvn.out &
               EOF
 
   lifecycle {
@@ -65,7 +65,7 @@ resource "aws_autoscaling_group" "app" {
   vpc_zone_identifier = ["${module.vpc.private_subnets}"]
 
   load_balancers    = ["${module.elb_app.this_elb_name}"]
-  health_check_type = "ELB"
+  health_check_type = "EC2"
 
   min_size = "${var.app_autoscale_min_size}"
   max_size = "${var.app_autoscale_max_size}"
