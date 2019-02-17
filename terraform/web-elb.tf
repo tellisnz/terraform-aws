@@ -7,7 +7,8 @@ resource "aws_security_group" "elb_web" {
     from_port   = "${var.web_port}"
     to_port     = "${var.web_port}"
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+#    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["39.109.189.92/32"]
   }
 
   egress {
@@ -52,30 +53,31 @@ module "elb_web" {
 
   tags {
     Group = "${var.name}"
+    Name = "web-elb-${var.name}"
   }
 
 }
 
-variable "web_elb_health_check_interval" {
-  description = "Duration between health checks"
-  default = 20
-}
-
-variable "web_elb_healthy_threshold" {
-  description = "Number of checks before an instance is declared healthy"
-  default = 2
-}
-
-variable "web_elb_unhealthy_threshold" {
-  description = "Number of checks before an instance is declared unhealthy"
-  default = 2
-}
-
-variable "web_elb_health_check_timeout" {
-  description = "Interval between checks"
-  default = 5
-}
-
+# variable "web_elb_health_check_interval" {
+#   description = "Duration between health checks"
+#   default = 20
+# }
+#
+# variable "web_elb_healthy_threshold" {
+#   description = "Number of checks before an instance is declared healthy"
+#   default = 2
+# }
+#
+# variable "web_elb_unhealthy_threshold" {
+#   description = "Number of checks before an instance is declared unhealthy"
+#   default = 2
+# }
+#
+# variable "web_elb_health_check_timeout" {
+#   description = "Interval between checks"
+#   default = 5
+# }
+#
 output "elb_dns_name" {
   value = "${module.elb_web.this_elb_dns_name}"
 }
