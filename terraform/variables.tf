@@ -60,21 +60,71 @@ variable "vpc_one_nat_gateway_per_az" {
   default     = true
 }
 
-# vpc_azs = [ "us-west-2a", "us-west-2b", "us-west-2c"]
-# vpc_cidr = "10.7.0.0/16"
-# vpc_public_subnets = ["10.7.1.0/24", "10.7.2.0/24", "10.7.3.0/24"]
-# vpc_pirvate_subnets  = ["10.7.11.0/24", "10.7.12.0/24", "10.7.13.0/24"]
-# vpc_database_subnets = ["10.7.21.0/24", "10.7.22.0/24", "10.7.23.0/24"]
-# vpc_enable_nat_gateway = true
-# vpc_single_nat_gateway = false
-# vpc_one_nat_gateway_per_az = true
-# vpc_env = "dev"
-
 # DB
-# db_identifier = "terraformaws"
-# db_name = "taws"
-# db_username = "tawsdbuser"
-# db_password = "tawsdbpassword"
+variable "db_identifier" {
+  description = "The name of the RDS instance"
+  default = "terraformaws"
+}
+
+variable "db_allocated_storage" {
+  description = "The allocated storage in GB"
+  default = 5
+}
+
+variable "db_name" {
+  description = "The DB name to create"
+  default = "taws"
+}
+
+variable "db_username" {
+  description = "Username for the master DB user"
+  default = "tawsdbuser"
+}
+
+variable "db_password" {
+  description = "Password for the master DB user"
+  default = "tawsdbpassword"
+}
+
+variable "db_port" {
+  description = "The port on which the DB accepts connections"
+  default = 5432
+}
+
+variable "db_maintenance_window" {
+  description = "The window to perform maintenance in"
+  default = "Mon:00:00-Mon:03:00"
+}
+
+variable "db_backup_window" {
+  description = "The daily time range (in UTC) during which automated backups are created if they are enabled"
+  default = "03:00-06:00"
+}
+
+variable "db_backup_retention_period" {
+  description = "The days to retain backups for"
+  default = 0
+}
+
+variable "db_engine" {
+  description = "DB engine"
+  default = "postgres"
+}
+
+variable "db_engine_version" {
+  description = "DB engine version"
+  default = "9.6.11"
+}
+
+variable "db_family" {
+  description = "DB family"
+  default = "postgres9.6"
+}
+
+variable "db_instance_class" {
+  description = "DB instance class"
+  default = "db.t2.micro"
+}
 
 #db_allocated_storage =
 #db_port =
