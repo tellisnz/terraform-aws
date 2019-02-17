@@ -30,24 +30,18 @@ resource "aws_security_group" "web" {
 
   tags {
     Group = "${var.name}"
+    Name = "web-sg"
   }
 
 }
 
-#TODO REMOVE
-# resource "aws_key_pair" "web-key" {
-#   key_name = "web-key"
-#   public_key = "${var.public_key}"
-#
-# }
 
 resource "aws_launch_configuration" "web" {
   image_id        = "${data.aws_ami.amazon_linux.id}"
   instance_type   = "${var.web_instance_type}"
   security_groups = ["${aws_security_group.web.id}"]
   #TODO REMOVE
-#  key_name = "web-key"
-  key_name = "terraform"
+  key_name = "${var.web_key_pair_name}"
   name_prefix = "${var.name}-web-vm-"
 
   user_data = <<-EOF

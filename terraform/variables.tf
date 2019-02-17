@@ -1,6 +1,3 @@
-# region = "us-east-2"
-# public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCRQYYw42SeWm4SvTt4iipyjozdpaR5FlNeyo3oWYXF2W2Uur+XXJssFhxD8xf0NFKRtrK3wVZPkP/7k6+eRufC9Lq6VZvImlCTFJmEy+uHnA+vlkoXbUGk2zr7Cpct7udpZZxSivt+7lQ4avhBCQE/hw1qZxdGyZJY1Z1F3LGHCP55a+h5XxtaZR0eJQmejWnG9wq++iywdeOH2tCeOsnyNw1bjhYfydEDK7OAh/sZYsroxGpk/0SNFyscy/x2zEBrveDppE6QlH9pffx50mV00OgefHx2wpa95jwG7RWKvUkwqqMx1bEbg7tZ76PfNTM/rRg+EV9d1NMKQ3R5S1zT"
-# name = "terraform-aws-three-tier"
 variable "region" {
   default = "us-east-2"
 }
@@ -173,6 +170,11 @@ variable "app_elb_health_check_timeout" {
   default = 5
 }
 
+variable "app_key_pair_name" {
+  description = "Application instance key pair name"
+  default = "terraform"
+}
+
 # Web
 
 variable "web_port" {
@@ -213,4 +215,9 @@ variable "web_elb_unhealthy_threshold" {
 variable "web_elb_health_check_timeout" {
   description = "Interval between checks"
   default = 5
+}
+
+variable "web_key_pair_name" {
+  description = "Application instance key pair name"
+  default = "terraform"
 }

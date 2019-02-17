@@ -30,6 +30,7 @@ resource "aws_security_group" "app" {
 
   tags {
     Group = "${var.name}"
+    Name = "app-sg"
   }
 }
 
@@ -38,8 +39,7 @@ resource "aws_launch_configuration" "app" {
   instance_type   = "${var.app_instance_type}"
   security_groups = ["${aws_security_group.app.id}"]
   #TODO REMOVE
-#  key_name = "web-key"
-  key_name = "terraform"
+  key_name = "${var.app_key_pair_name}"
   name_prefix = "${var.name}-app-vm-"
 
   user_data = <<-EOF
@@ -79,23 +79,3 @@ resource "aws_autoscaling_group" "app" {
   }
 
 }
-
-# variable "app_port" {
-#   description = "The port on which the application listens for connections"
-#   default = 8080
-# }
-#
-# variable "app_instance_type" {
-#   description = "The EC2 instance type for the application servers"
-#   default = "t2.micro"
-# }
-#
-# variable "app_autoscale_min_size" {
-#   description = "The fewest amount of EC2 instances to start"
-#   default = 2
-# }
-#
-# variable "app_autoscale_max_size" {
-#   description = "The largest amount of EC2 instances to start"
-#   default = 3
-# }

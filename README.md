@@ -15,9 +15,14 @@ Sample app from (here)[http://javasampleapproach.com/spring-framework/spring-mvc
 
 # Usage
 
-Take a copy of terraform.tfvars.template and substitute required values.
-
-Apply as per normal, i.e. `terraform apply -var-file=terraform.tfvars`
+1. Copy "terraform.tfvars.template" to "terraform.tfvars"
+2. Substitute required values in "terraform.tfvars".
+3. Add "public_key", "app_key_pair_name" and "web_key_pair_name" to terraform.tfvars file.
+4. Plan
+$ terraform plan -var-file=terraform.tfvars -out=tfplan.tf
+5. Apply
+$ terraform apply "tfplan.tf"
+6. Access the application via the outputs web tier elb url.
 
 # Testing
 

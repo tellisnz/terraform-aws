@@ -21,17 +21,3 @@ data "aws_ami" "amazon_linux" {
     ]
   }
 }
-
-# variable "region" {
-#   description = "The AWS region to deploy to"
-#   default = "us-west-2"
-# }
-#
-# variable "name" {
-#   description = "The name of the deployment"
-#   default = ""
-# }
-#
-# variable "public_key" {
-#   default = ""
-# }
