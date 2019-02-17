@@ -187,12 +187,12 @@ variable "web_instance_type" {
 
 variable "web_autoscale_min_size" {
   description = "The fewest amount of EC2 instances to start"
-  default = 2
+  default = 3
 }
 
 variable "web_autoscale_max_size" {
   description = "The largest amount of EC2 instances to start"
-  default = 3
+  default = 6
 }
 
 variable "web_elb_health_check_interval" {

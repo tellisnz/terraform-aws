@@ -7,14 +7,14 @@ resource "aws_security_group" "web" {
     from_port   = "${var.web_port}"
     to_port     = "${var.web_port}"
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["${module.vpc.public_subnets_cidr_blocks}"]
   }
 
   ingress {
     from_port   = "22"
     to_port     = "22"
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["${module.vpc.public_subnets_cidr_blocks}"]
   }
 
   egress {
