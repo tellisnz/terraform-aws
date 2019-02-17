@@ -132,6 +132,46 @@ variable "db_instance_class" {
 #db_backup_retention_period =
 #db_maintenance_window =
 
+# App
+variable "app_port" {
+  description = "The port on which the application listens for connections"
+  default = 8080
+}
+
+variable "app_instance_type" {
+  description = "The EC2 instance type for the application servers"
+  default = "t2.micro"
+}
+
+variable "app_autoscale_min_size" {
+  description = "The fewest amount of EC2 instances to start"
+  default = 3
+}
+
+variable "app_autoscale_max_size" {
+  description = "The largest amount of EC2 instances to start"
+  default = 6
+}
+
+variable "app_elb_health_check_interval" {
+  description = "Duration between health checks"
+  default = 20
+}
+
+variable "app_elb_healthy_threshold" {
+  description = "Number of checks before an instance is declared healthy"
+  default = 2
+}
+
+variable "app_elb_unhealthy_threshold" {
+  description = "Number of checks before an instance is declared unhealthy"
+  default = 2
+}
+
+variable "app_elb_health_check_timeout" {
+  description = "Interval between checks"
+  default = 5
+}
 #app_port =
 #app_instance_type =
 #app_autoscale_min_size =

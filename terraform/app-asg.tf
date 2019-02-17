@@ -27,7 +27,7 @@ resource "aws_security_group" "app" {
   lifecycle {
     create_before_destroy = true
   }
-  
+
   tags {
     Group = "${var.name}"
   }
@@ -38,7 +38,8 @@ resource "aws_launch_configuration" "app" {
   instance_type   = "${var.app_instance_type}"
   security_groups = ["${aws_security_group.app.id}"]
   #TODO REMOVE
-  key_name = "web-key"
+#  key_name = "web-key"
+  key_name = "terraform"
   name_prefix = "${var.name}-app-vm-"
 
   user_data = <<-EOF
@@ -73,27 +74,28 @@ resource "aws_autoscaling_group" "app" {
   tags {
     key = "Group"
     value = "${var.name}"
+    Name = "asg-${var.name}"
     propagate_at_launch = true
   }
 
 }
 
-variable "app_port" {
-  description = "The port on which the application listens for connections"
-  default = 8080
-}
-
-variable "app_instance_type" {
-  description = "The EC2 instance type for the application servers"
-  default = "t2.micro"
-}
-
-variable "app_autoscale_min_size" {
-  description = "The fewest amount of EC2 instances to start"
-  default = 2
-}
-
-variable "app_autoscale_max_size" {
-  description = "The largest amount of EC2 instances to start"
-  default = 3
-}
+# variable "app_port" {
+#   description = "The port on which the application listens for connections"
+#   default = 8080
+# }
+#
+# variable "app_instance_type" {
+#   description = "The EC2 instance type for the application servers"
+#   default = "t2.micro"
+# }
+#
+# variable "app_autoscale_min_size" {
+#   description = "The fewest amount of EC2 instances to start"
+#   default = 2
+# }
+#
+# variable "app_autoscale_max_size" {
+#   description = "The largest amount of EC2 instances to start"
+#   default = 3
+# }
