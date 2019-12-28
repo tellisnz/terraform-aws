@@ -1,5 +1,5 @@
 region = "us-east-2"
-public_key = "" # Replace with your own public key
+public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCRQYYw42SeWm4SvTt4iipyjozdpaR5FlNeyo3oWYXF2W2Uur+XXJssFhxD8xf0NFKRtrK3wVZPkP/7k6+eRufC9Lq6VZvImlCTFJmEy+uHnA+vlkoXbUGk2zr7Cpct7udpZZxSivt+7lQ4avhBCQE/hw1qZxdGyZJY1Z1F3LGHCP55a+h5XxtaZR0eJQmejWnG9wq++iywdeOH2tCeOsnyNw1bjhYfydEDK7OAh/sZYsroxGpk/0SNFyscy/x2zEBrveDppE6QlH9pffx50mV00OgefHx2wpa95jwG7RWKvUkwqqMx1bEbg7tZ76PfNTM/rRg+EV9d1NMKQ3R5S1zT"
 name = "terraform-aws-three-tier"
 
 # VPC Variables
@@ -37,7 +37,7 @@ app_elb_health_check_interval = "20"
 app_elb_healthy_threshold = "2"
 app_elb_unhealthy_threshold = "2"
 app_elb_health_check_timeout = "5"
-app_key_pair_name = "" # Replace with your own keypair name
+app_key_pair_name = "terraform"
 
 #Web
 web_port = "80"
@@ -48,4 +48,4 @@ web_elb_health_check_interval = "20"
 web_elb_healthy_threshold = "2"
 web_elb_unhealthy_threshold = "2"
 web_elb_health_check_timeout = "5"
-web_key_pair_name = "" # Replace with your own keypair name
+web_key_pair_name = "terraform"

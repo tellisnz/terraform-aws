@@ -1,13 +1,14 @@
 provider "aws" {
-  region = "${var.region}"
+  region  = var.region
+  version = "~> 2.0"
 }
 
 data "aws_ami" "amazon_linux" {
   most_recent = true
+  owners = ["amazon"]
 
   filter {
     name = "name"
-
     values = [
       "amzn-ami-hvm-*-x86_64-gp2",
     ]
@@ -15,7 +16,6 @@ data "aws_ami" "amazon_linux" {
 
   filter {
     name = "owner-alias"
-
     values = [
       "amazon",
     ]
