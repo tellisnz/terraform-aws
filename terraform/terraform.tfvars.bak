@@ -1,0 +1,51 @@
+region = "us-east-2"
+public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCRQYYw42SeWm4SvTt4iipyjozdpaR5FlNeyo3oWYXF2W2Uur+XXJssFhxD8xf0NFKRtrK3wVZPkP/7k6+eRufC9Lq6VZvImlCTFJmEy+uHnA+vlkoXbUGk2zr7Cpct7udpZZxSivt+7lQ4avhBCQE/hw1qZxdGyZJY1Z1F3LGHCP55a+h5XxtaZR0eJQmejWnG9wq++iywdeOH2tCeOsnyNw1bjhYfydEDK7OAh/sZYsroxGpk/0SNFyscy/x2zEBrveDppE6QlH9pffx50mV00OgefHx2wpa95jwG7RWKvUkwqqMx1bEbg7tZ76PfNTM/rRg+EV9d1NMKQ3R5S1zT"
+name = "terraform-aws-three-tier"
+
+# VPC Variables
+vpc_env = "dev"
+vpc_azs = [ "us-east-2a", "us-east-2b", "us-east-2c"]
+vpc_cidr = "10.7.0.0/16"
+vpc_public_subnets = ["10.7.1.0/24", "10.7.2.0/24", "10.7.3.0/24"]
+vpc_pirvate_subnets  = ["10.7.11.0/24", "10.7.12.0/24", "10.7.13.0/24"]
+vpc_database_subnets = ["10.7.21.0/24", "10.7.22.0/24", "10.7.23.0/24"]
+vpc_enable_nat_gateway = true
+vpc_single_nat_gateway = false
+vpc_one_nat_gateway_per_az = true
+
+# DB
+db_identifier = "terraformaws"
+db_name = "taws"
+db_username = "tawsdbuser"
+db_password = "tawsdbpassword"
+db_engine = "postgres"
+db_engine_version = "9.6.11"
+db_family = "postgres9.6"
+db_instance_class = "db.t2.micro"
+db_allocated_storage = "5"
+db_port = "5432"
+db_backup_window = "03:00-06:00"
+db_backup_retention_period = "0"
+db_maintenance_window = "Mon:00:00-Mon:03:00"
+
+#App
+app_port = "8080"
+app_instance_type = "t2.micro"
+app_autoscale_min_size = "3"
+app_autoscale_max_size = "6"
+app_elb_health_check_interval = "20"
+app_elb_healthy_threshold = "2"
+app_elb_unhealthy_threshold = "2"
+app_elb_health_check_timeout = "5"
+app_key_pair_name = "terraform"
+
+#Web
+web_port = "80"
+web_instance_type = "t2.micro"
+web_autoscale_min_size = "3"
+web_autoscale_max_size = "6"
+web_elb_health_check_interval = "20"
+web_elb_healthy_threshold = "2"
+web_elb_unhealthy_threshold = "2"
+web_elb_health_check_timeout = "5"
+web_key_pair_name = "terraform"
